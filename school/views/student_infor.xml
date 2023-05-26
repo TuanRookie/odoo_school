@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+        <record id="student_infor_tree" model="ir.ui.view">
+            <field name="name">student.infor.tree</field>
+            <field name="model">student.infor</field>
+            <field name="arch" type="xml">
+                <tree string="Student">
+                    <field name="name"/>
+                    <field name="birthday"/>
+                    <field name="class_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="student_information_form" model="ir.ui.view">
+            <field name="name">student.infor.form</field>
+            <field name="model">student.infor</field>
+            <field name="arch" type="xml">
+                <form string="Student Information">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="birthday"/>
+                                <field name="class_id"/>
+                            </group>
+                            <group>
+                                <field name="currency_id"/>
+                                <field name="tuition"/>
+                            </group>
+                            <group>
+                                <field name="subject_list" widget="many2many_tags" string="List Subject" >
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_student" model="ir.actions.act_window">
+        <field name="name">Student Infor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.infor</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field> <!--Che do xem-->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create First class!
+            </p>
+        </field>
+    </record>
+        <menuitem id ="student_menu"
+                  name="Student Infor"
+                  parent ="school_root"
+                  action="action_student"
+                  sequence="3"
+        />
+
+</odoo>

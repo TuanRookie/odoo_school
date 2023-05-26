@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_school_information,access.school.information,model_school_information,,1,1,1,1
+access_class_infor,access.class.infor,model_class_infor,,1,1,1,1
+access_student_infor,access.student.infor,model_student_infor,,1,1,1,1
+access_subject_infor,access.subject.infor,model_subject_infor,,1,1,1,1

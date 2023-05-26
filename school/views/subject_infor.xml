@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+        <record id="subject_infor_tree" model="ir.ui.view">
+            <field name="name">subject.infor.tree</field>
+            <field name="model">subject.infor</field>
+            <field name="arch" type="xml">
+                <tree string="Subject">
+                    <field name="name"/>
+                    <field name="author"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="subject_information_form" model="ir.ui.view">
+            <field name="name">subject.infor.form</field>
+            <field name="model">subject.infor</field>
+            <field name="arch" type="xml">
+                <form string="Subject Information">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="author"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_subject" model="ir.actions.act_window">
+            <field name="name">Subject Infor</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">subject.infor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field> <!--Che do xem-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create First subject!
+                </p>
+            </field>
+        </record>
+        <menuitem id ="subject_menu"
+                  name="Subject Infor"
+                  parent ="school_root"
+                  action="action_subject"
+                  sequence="4"
+        />
+
+</odoo>

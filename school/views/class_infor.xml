@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+        <record id="class_infor_tree" model="ir.ui.view">
+            <field name="name">class.infor.tree</field>
+            <field name="model">class.infor</field>
+            <field name="arch" type="xml">
+                <tree string="Class">
+                    <field name="name"/>
+                    <field name="grade"/>
+                    <field name="mainTeacher"/>
+                    <field name="school_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="class_information_form" model="ir.ui.view">
+            <field name="name">class.infor.form</field>
+            <field name="model">class.infor</field>
+            <field name="arch" type="xml">
+                <form string="Class Information">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="grade"/>
+                                <field name="mainTeacher"/>
+                                <field name="school_id"/>
+                            </group>
+                            <group>
+                                <field name="student_list" edittable="bottom">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="birthday"/>
+                                    </tree>
+                                    <form>
+                                        <field name="name"/>
+                                        <field name="birthday"/>
+                                    </form>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_class" model="ir.actions.act_window">
+        <field name="name">Class Infor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">class.infor</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field> <!--Che do xem-->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create First class!
+            </p>
+        </field>
+    </record>
+        <menuitem id ="class_menu"
+                  name="Class Infor"
+                  parent ="school_root"
+                  action="action_class"
+                  sequence="2"
+        />
+
+</odoo>
